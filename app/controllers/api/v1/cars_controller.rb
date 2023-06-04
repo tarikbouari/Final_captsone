@@ -1,5 +1,5 @@
 class Api::V1::CarsController < ApplicationController
-  before_action :authenticate_user!, only: %i[destroy]
+  # before_action :authenticate_user!, only: %i[destroy]
   before_action :set_car, only: %i[destroy show]
 
   def index
@@ -21,6 +21,14 @@ class Api::V1::CarsController < ApplicationController
       }, status: :created
     else
       render json: { error: 'ERROR: Unable to create the car' }, status: :unprocessable_entity
+    end
+  end
+
+  def update
+    if @car.update(car_params)
+      render json: { message: 'Updated successfully' }
+    else
+      render json: @car.errors, status: :unprocessable_entity
     end
   end
 
