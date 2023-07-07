@@ -81,7 +81,7 @@ In order to run this project you need:
 - Computer that's connected to the internet.
 - Get Ruby installed
 - Git and Rails installed 
-- Code editor (preferebly VS Code)
+- Code editor (preferably VS Code)
 
 
 ### Setup
