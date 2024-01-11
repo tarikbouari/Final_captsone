@@ -10,7 +10,7 @@ Rails.application.routes.draw do
       resources :users do
         # get 'users', to: 'users#index'
         resources :reservations, only: [:index, :create, :destroy] 
-        # get 'reservations', to: 'reservations#index' 
+        get 'reservations', to: 'reservations#index' 
       end
       resources :cars, only: [:index, :show, :create, :update, :destroy]
       get 'cars', to:'cars#index'
